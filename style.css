@@ -19,7 +19,7 @@ body {
     padding: 0;
     background: var(--bg-dark);
     color: var(--text);
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: Arial, 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
