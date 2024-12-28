@@ -7,6 +7,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Adjust scroll position for fixed header */
+        html {
+            scroll-padding-top: 80px; /* Adjust based on header height */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +20,7 @@
             <div class="logo">Keimy Folding</div>
             <nav>
                 <a href="#intro"><i class="fas fa-home"></i> Introduction</a>
-                <a href="#datasets"><i class="fas fa-database"></i> Datasets</a>
+                <a href="#databases"><i class="fas fa-database"></i> Databases</a>
                 <a href="#tools"><i class="fas fa-tools"></i> Tools</a>
                 <a href="#author"><i class="fas fa-user"></i> Author</a>
             </nav>
@@ -29,8 +35,8 @@
             <p>Start your journey into bioinformatics with our carefully selected collection of tools and resources!</p>
         </section>
 
-        <section id="datasets">
-            <h2>Biological Databases</h2>
+        <section id="databases">
+            <h2>Databases</h2>
             <p>Essential database resources for biological data analysis.</p>
 
             <!-- Nucleotide Databases -->
@@ -109,18 +115,19 @@
                 </li>
             </ul>
 
-            <!-- Literature Databases -->
-            <h3>Literature Databases</h3>
+            <!-- Motif Databases -->
+            <h3>Motif Databases</h3>
             <ul>
                 <li>
-                    <strong><i class="fas fa-book"></i> PubMed</strong>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/</a>
+                    <strong><i class="fas fa-dna"></i> InterPro</strong>
+                    <a href="https://www.ebi.ac.uk/interpro/" target="_blank" rel="noopener noreferrer">https://www.ebi.ac.uk/interpro/</a>
+                    <p>Includes Pfam, ProDom, PROSITE, HAMAP, PIR-PSD, PRINTS, SMART, TIGRFAMs.</p>
                 </li>
             </ul>
         </section>
 
         <section id="tools">
-            <h2>Analysis Tools</h2>
+            <h2>Tools</h2>
             <ul>
                 <li>
                     <strong><i class="fas fa-brain"></i> AlphaFold</strong>
