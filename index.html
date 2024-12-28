@@ -12,6 +12,9 @@
         html {
             scroll-padding-top: 80px; /* Adjust based on header height */
         }
+        section {
+            scroll-margin-top: 100px; /* Ensures the logo remains visible above */
+        }
     </style>
 </head>
 <body>
@@ -128,14 +131,22 @@
 
         <section id="tools">
             <h2>Tools</h2>
+
+            <!-- Sequence Analysis Tools -->
+            <h3>Sequence Analysis Tools</h3>
+            <ul>
+                <li>
+                    <strong><i class="fas fa-search"></i> BLAST</strong>
+                    <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank" rel="noopener noreferrer">https://blast.ncbi.nlm.nih.gov/Blast.cgi</a>
+                </li>
+            </ul>
+
+            <!-- Structure Prediction Tools -->
+            <h3>Structure Prediction Tools</h3>
             <ul>
                 <li>
                     <strong><i class="fas fa-brain"></i> AlphaFold</strong>
                     <a href="https://alphafold.ebi.ac.uk/" target="_blank" rel="noopener noreferrer">https://alphafold.ebi.ac.uk/</a>
-                </li>
-                <li>
-                    <strong><i class="fas fa-search"></i> BLAST</strong>
-                    <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank" rel="noopener noreferrer">https://blast.ncbi.nlm.nih.gov/Blast.cgi</a>
                 </li>
                 <li>
                     <strong><i class="fas fa-atom"></i> Rosetta</strong>
