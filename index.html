@@ -25,6 +25,7 @@
                 <a href="#intro"><i class="fas fa-home"></i> Introduction</a>
                 <a href="#databases"><i class="fas fa-database"></i> Databases</a>
                 <a href="#tools"><i class="fas fa-tools"></i> Tools</a>
+                <a href="#blog"><i class="fas fa-calendar-alt"></i> Blog</a>
                 <a href="#author"><i class="fas fa-user"></i> Author</a>
             </nav>
         </div>
@@ -32,6 +33,7 @@
 
     <main>
 
+<!-- イントロ -->
         <section id="intro">
             <h2>Introduction</h2>
             <p>Keimy Folding is a platform that folds together open medical and biological databases and powerful tools.</p>
@@ -39,6 +41,8 @@
             <p>Keimy, an MD researcher, is the creator of this platform.</p>
         </section>
 
+
+<!-- データベース -->
         <section id="databases">
             <h2>Databases</h2>
 
@@ -169,6 +173,8 @@
             </ul>
         </section>
 
+
+<!-- ツール -->
         <section id="tools">
             <h2>Tools</h2>
 
@@ -223,6 +229,64 @@
             </ul>
         </section>
 
+<!-- ブログセクション -->
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Click on a date to view the blog post for that day:</p>
+            <div id="calendar-container"></div>
+            <script>
+                const calendarContainer = document.getElementById('calendar-container');
+                const currentMonth = new Date().getMonth();
+                const currentYear = new Date().getFullYear();
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        
+                const blogLinks = {
+                    "2024-12-01": "blog/2024-12-01.html",
+                    "2024-12-15": "blog/2024-12-15.html"
+                };
+        
+                const table = document.createElement('table');
+                table.className = "calendar";
+        
+                const headerRow = document.createElement('tr');
+                ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
+                    const th = document.createElement('th');
+                    th.textContent = day;
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+        
+                let date = new Date(currentYear, currentMonth, 1);
+                let row = document.createElement('tr');
+                for (let i = 0; i < date.getDay(); i++) {
+                    row.appendChild(document.createElement('td'));
+                }
+        
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const cell = document.createElement('td');
+                    const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    if (blogLinks[dateString]) {
+                        const link = document.createElement('a');
+                        link.href = blogLinks[dateString];
+                        link.textContent = day;
+                        cell.appendChild(link);
+                    } else {
+                        cell.textContent = day;
+                    }
+                    row.appendChild(cell);
+                    if (date.getDay() === 6) {
+                        table.appendChild(row);
+                        row = document.createElement('tr');
+                    }
+                    date.setDate(date.getDate() + 1);
+                }
+                table.appendChild(row);
+                calendarContainer.appendChild(table);
+            </script>
+        </section>
+
+
+<!-- 作成者情報 -->
         <section id="author">
             <h2>About the Author</h2>
             <p>Learn more about Keimy in Japan :</p>

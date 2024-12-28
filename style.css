@@ -262,3 +262,36 @@ footer {
         padding: 1.5rem;
     }
 }
+
+/* カレンダー */
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.calendar th, .calendar td {
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calendar th {
+    background: var(--primary-dark);
+    color: var(--text);
+}
+
+.calendar td {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+}
+
+.calendar td a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.calendar td a:hover {
+    color: var(--text);
+}
