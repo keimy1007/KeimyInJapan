@@ -9,47 +9,87 @@
 <body>
     <section id="blog-calendar">
         <h2>Blog Calendar</h2>
+        <div id="calendar-controls">
+            <button id="prev-month">Previous</button>
+            <span id="current-month"></span>
+            <button id="next-month">Next</button>
+        </div>
         <div id="calendar-container"></div>
         <script>
             const calendarContainer = document.getElementById('calendar-container');
-            const currentMonth = new Date().getMonth();
-            const currentYear = new Date().getFullYear();
-            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const currentMonthSpan = document.getElementById('current-month');
+            const prevMonthBtn = document.getElementById('prev-month');
+            const nextMonthBtn = document.getElementById('next-month');
 
-            const table = document.createElement('table');
-            table.className = "calendar";
+            let currentDate = new Date();
 
-            const headerRow = document.createElement('tr');
-            ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
-                const th = document.createElement('th');
-                th.textContent = day;
-                headerRow.appendChild(th);
-            });
-            table.appendChild(headerRow);
+            const blogLinks = {
+                "2024-12-01": "blog/20241201.html",
+                "2024-12-15": "blog/20241215.html"
+            };
 
-            let date = new Date(currentYear, currentMonth, 1);
-            let row = document.createElement('tr');
-            for (let i = 0; i < date.getDay(); i++) {
-                row.appendChild(document.createElement('td'));
-            }
+            function renderCalendar(date) {
+                calendarContainer.innerHTML = '';
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                const firstDayOfWeek = new Date(year, month, 1).getDay();
 
-            for (let day = 1; day <= daysInMonth; day++) {
-                const cell = document.createElement('td');
-                const link = document.createElement('a');
-                const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-                link.href = `blog/${dateString}.html`; // Dynamically link to blog pages
-                link.textContent = day;
-                cell.appendChild(link);
-                row.appendChild(cell);
+                currentMonthSpan.textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
 
-                if (date.getDay() === 6) {
-                    table.appendChild(row);
-                    row = document.createElement('tr');
+                const table = document.createElement('table');
+                table.className = "calendar";
+
+                const headerRow = document.createElement('tr');
+                ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
+                    const th = document.createElement('th');
+                    th.textContent = day;
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
+                let row = document.createElement('tr');
+                for (let i = 0; i < firstDayOfWeek; i++) {
+                    row.appendChild(document.createElement('td'));
                 }
-                date.setDate(date.getDate() + 1);
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const cell = document.createElement('td');
+                    const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const formattedLink = `${year}${String(month + 1).padStart(2, '0')}${String(day).padStart(2, '0')}.html`;
+
+                    if (blogLinks[dateString]) {
+                        const link = document.createElement('a');
+                        link.href = `blog/${formattedLink}`;
+                        link.textContent = day;
+                        link.className = "active-link";
+                        cell.appendChild(link);
+                    } else {
+                        cell.textContent = day;
+                        cell.className = "inactive";
+                    }
+
+                    row.appendChild(cell);
+
+                    if ((firstDayOfWeek + day) % 7 === 0) {
+                        table.appendChild(row);
+                        row = document.createElement('tr');
+                    }
+                }
+
+                table.appendChild(row);
+                calendarContainer.appendChild(table);
             }
-            table.appendChild(row);
-            calendarContainer.appendChild(table);
+
+            function changeMonth(offset) {
+                currentDate.setMonth(currentDate.getMonth() + offset);
+                renderCalendar(currentDate);
+            }
+
+            prevMonthBtn.addEventListener('click', () => changeMonth(-1));
+            nextMonthBtn.addEventListener('click', () => changeMonth(1));
+
+            renderCalendar(currentDate);
         </script>
     </section>
 </body>

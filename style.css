@@ -263,6 +263,7 @@ footer {
     }
 }
 
+
 /* カレンダー */
 iframe {
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -299,4 +300,52 @@ iframe {
 
 .calendar td a:hover {
     color: var(--text);
+}
+
+#calendar-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+#calendar-controls button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-dark);
+    color: var(--text);
+    cursor: pointer;
+}
+
+#calendar-controls button:hover {
+    background-color: var(--primary);
+}
+
+#current-month {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.calendar td {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.calendar td a.active-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.calendar td a.active-link:hover {
+    color: var(--accent);
+}
+
+.calendar td.inactive {
+    color: var(--text-secondary);
+    pointer-events: none;
+    opacity: 0.5;
 }
