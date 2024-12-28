@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="blog-calendar">
+        <h2>Blog Calendar</h2>
+        <div id="calendar-container"></div>
+        <script>
+            const calendarContainer = document.getElementById('calendar-container');
+            const currentMonth = new Date().getMonth();
+            const currentYear = new Date().getFullYear();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            const table = document.createElement('table');
+            table.className = "calendar";
+
+            const headerRow = document.createElement('tr');
+            ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
+                const th = document.createElement('th');
+                th.textContent = day;
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+
+            let date = new Date(currentYear, currentMonth, 1);
+            let row = document.createElement('tr');
+            for (let i = 0; i < date.getDay(); i++) {
+                row.appendChild(document.createElement('td'));
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const cell = document.createElement('td');
+                const link = document.createElement('a');
+                const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                link.href = `blog/${dateString}.html`; // Dynamically link to blog pages
+                link.textContent = day;
+                cell.appendChild(link);
+                row.appendChild(cell);
+
+                if (date.getDay() === 6) {
+                    table.appendChild(row);
+                    row = document.createElement('tr');
+                }
+                date.setDate(date.getDate() + 1);
+            }
+            table.appendChild(row);
+            calendarContainer.appendChild(table);
+        </script>
+    </section>
+</body>
+</html>
