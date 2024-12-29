@@ -264,13 +264,14 @@ footer {
 }
 
 
-/* カレンダー */
+/* blog.htmlの埋め込み */
 iframe {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     background: var(--bg-section);
 }
 
+/* カレンダー全体 */
 .calendar {
     width: 100%;
     border-collapse: collapse;
@@ -291,17 +292,32 @@ iframe {
 .calendar td {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text);
+    text-align: center;
 }
 
+/* リンクのスタイル */
 .calendar td a {
     color: var(--primary);
     text-decoration: none;
 }
 
 .calendar td a:hover {
-    color: var(--text);
+    color: var(--accent);
 }
 
+/* アクティブなリンク（リンクが存在する日付） */
+.calendar td a.active-link {
+    font-weight: bold;
+}
+
+/* 無効な日付（リンクが存在しない日付） */
+.calendar td.inactive {
+    color: var(--text-secondary);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* カレンダーのコントロール */
 #calendar-controls {
     display: flex;
     justify-content: center;
@@ -327,25 +343,4 @@ iframe {
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--primary);
-}
-
-.calendar td {
-    padding: 0.5rem;
-    text-align: center;
-}
-
-.calendar td a.active-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.calendar td a.active-link:hover {
-    color: var(--accent);
-}
-
-.calendar td.inactive {
-    color: var(--text-secondary);
-    pointer-events: none;
-    opacity: 0.5;
 }
