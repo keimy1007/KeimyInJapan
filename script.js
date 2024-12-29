@@ -46,6 +46,13 @@ async function renderCalendar(date) {
             link.href = filePath;
             link.textContent = day;
             link.className = "active-link";
+
+            // ページ遷移後、カレンダーを再初期化するためのクリックイベント
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.location.href = link.href; // 現在のiframe内で遷移
+            });
+
             cell.appendChild(link);
         } else {
             cell.textContent = day;
@@ -69,7 +76,9 @@ function changeMonth(offset) {
     renderCalendar(currentDate);
 }
 
+// 前月・次月ボタンにイベントリスナーを登録
 prevMonthBtn.addEventListener('click', () => changeMonth(-1));
 nextMonthBtn.addEventListener('click', () => changeMonth(1));
 
+// 初回表示
 renderCalendar(currentDate);
