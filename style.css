@@ -134,6 +134,7 @@ section {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 section::before {
@@ -263,11 +264,15 @@ footer {
     }
 }
 
-
-/* blog.htmlの埋め込み */
+/* iframe の距離調整 */
 iframe {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    margin: 0; /* 余分なマージンを削除 */
+    padding: 0; /* パディングを削除 */
+    display: block; /* 不要な余白を排除 */
+    width: 100%;
+
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 必要に応じて維持 */
+    border-radius: 8px; /* 角の丸みを維持 */
     background: var(--bg-section);
 }
 
