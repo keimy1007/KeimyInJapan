@@ -5,18 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Calendar</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendarContainer = document.getElementById('calendar-container');
+            const currentMonthSpan = document.getElementById('current-month');
+            const prevMonthBtn = document.getElementById('prev-month');
+            const nextMonthBtn = document.getElementById('next-month');
+            const blogContentContainer = document.getElementById('blog-content-container');
+            
+            let currentDate = new Date();
+
+            function fileExists(url) {
+                return fetch(url, { method: 'HEAD' })
+                    .then(res => res.ok)
+                    .catch(() => false);
+            }
+
+            async function renderCalendar(date) {
+                calendarContainer.innerHTML = '';
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                const firstDayOfWeek = new Date(year, month, 1).getDay();
+
+                currentMonthSpan.textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+
+                const table = document.createElement('table');
+                table.className = "calendar";
+
+                const headerRow = document.createElement('tr');
+                ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
+                    const th = document.createElement('th');
+                    th.textContent = day;
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
+                let row = document.createElement('tr');
+                for (let i = 0; i < firstDayOfWeek; i++) {
+                    row.appendChild(document.createElement('td'));
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const cell = document.createElement('td');
+                    const formattedDate = `${year}${String(month + 1).padStart(2, '0')}${String(day).padStart(2, '0')}`;
+                    const filePath = `blog/${formattedDate}.html`;
+
+                    if (await fileExists(filePath)) {
+                        const link = document.createElement('a');
+                        link.href = filePath;
+                        link.textContent = day;
+                        link.className = "active-link";
+
+                        // コンテンツを読み込むクリックイベント
+                        link.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            loadBlogContent(filePath);
+                        });
+
+                        cell.appendChild(link);
+                    } else {
+                        cell.textContent = day;
+                        cell.className = "inactive";
+                    }
+
+                    row.appendChild(cell);
+
+                    if ((firstDayOfWeek + day) % 7 === 0) {
+                        table.appendChild(row);
+                        row = document.createElement('tr');
+                    }
+                }
+
+                table.appendChild(row);
+                calendarContainer.appendChild(table);
+            }
+
+            function changeMonth(offset) {
+                currentDate.setMonth(currentDate.getMonth() + offset);
+                renderCalendar(currentDate);
+            }
+
+            async function loadBlogContent(filePath) {
+                try {
+                    const response = await fetch(filePath);
+                    if (response.ok) {
+                        const content = await response.text();
+                        blogContentContainer.innerHTML = content;
+                    } else {
+                        blogContentContainer.innerHTML = '<p>記事が見つかりません。</p>';
+                    }
+                } catch (error) {
+                    blogContentContainer.innerHTML = '<p>記事を読み込めませんでした。</p>';
+                }
+            }
+
+            prevMonthBtn.addEventListener('click', () => changeMonth(-1));
+            nextMonthBtn.addEventListener('click', () => changeMonth(1));
+
+            renderCalendar(currentDate);
+        });
+    </script>
 </head>
 <body>
+    <main>
+        <!-- カレンダーセクション -->
+        <section id="blog-calendar">
+            <h3>カレンダー</h3>
+            <div id="calendar-controls">
+                <button id="prev-month">Previous</button>
+                <span id="current-month"></span>
+                <button id="next-month">Next</button>
+            </div>
+            <div id="calendar-container"></div>
+        </section>
 
-    <section id="blog-calendar">
-        <div id="calendar-controls">
-            <button id="prev-month">Previous</button>
-            <span id="current-month"></span>
-            <button id="next-month">Next</button>
-        </div>
-        <div id="calendar-container"></div>
-    </section>
+        <!-- 記事コンテンツセクション -->
+        <section id="blog-content">
+            <h3>記事</h3>
+            <div id="blog-content-container">
+                <p>カレンダーから記事を選択してください。</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
-
