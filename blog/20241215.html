@@ -5,36 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>初投稿 - Blog System Test</title>
     <link rel="stylesheet" href="../style.css">
+    <script defer src="../script.js"></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">Keimy Folding</div>
-            <nav>
-                <a href="../index.html#intro"><i class="fas fa-home"></i> Introduction</a>
-                <a href="../index.html#databases"><i class="fas fa-database"></i> Databases</a>
-                <a href="../index.html#tools"><i class="fas fa-tools"></i> Tools</a>
-                <a href="../index.html#blog"><i class="fas fa-calendar-alt"></i> Blog</a>
-                <a href="../index.html#author"><i class="fas fa-user"></i> Author</a>
-            </nav>
-        </div>
-    </header>
-
     <main>
+        <!-- 記事セクション -->
         <section id="blog-post">
             <h2>初投稿</h2>
-            <p><strong>日付：</strong>2024年12月15日</p>
+            <p><strong>日付：</strong>2024年12月29日</p>
             <p><strong>内容：</strong>ブログシステムの実験をしてます。</p>
         </section>
 
+        <!-- カレンダーセクション -->
         <section id="blog-calendar">
             <h3>カレンダー</h3>
-            <iframe src="../blog.html" width="100%" height="600" style="border:none;"></iframe>
+            <div id="calendar-controls">
+                <button id="prev-month">Previous</button>
+                <span id="current-month"></span>
+                <button id="next-month">Next</button>
+            </div>
+            <div id="calendar-container"></div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Keimy Folding Info</p>
-    </footer>
 </body>
 </html>
