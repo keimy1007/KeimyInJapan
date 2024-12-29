@@ -1,18 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>初投稿 - Blog System Test</title>
+    <title>論文サマリー - Blog System Test</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
 </head>
 <body>
     <main>
         <!-- 記事セクション -->
         <section id="blog-post">
-            <h2>初投稿</h2>
+            <h2>最新の細胞生物学研究の概要</h2>
             <p><strong>日付：</strong>2024年12月29日</p>
-            <p><strong>内容：</strong>ブログシステムの実験をしてます。</p>
+            <table>
+                <tr>
+                    <th>項目</th>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <td>どんな論文？</td>
+                    <td>細胞のシグナル伝達経路に関する詳細な解析を行い、新しいタンパク質の役割を発見。</td>
+                </tr>
+                <tr>
+                    <td>何がすごい？</td>
+                    <td>複雑な細胞内プロセスを定量的にモデル化し、従来の理論を更新。</td>
+                </tr>
+                <tr>
+                    <td>技術のキモは？</td>
+                    <td>最新の単一細胞解析技術とAIによるデータ解析の組み合わせ。</td>
+                </tr>
+                <tr>
+                    <td>検証方法は？</td>
+                    <td>複数の細胞系での実験的検証とコンピュータシミュレーションによる再現性の確認。</td>
+                </tr>
+                <tr>
+                    <td>議論は？</td>
+                    <td>新規発見の応用可能性、医学的意義、および今後の研究課題について。</td>
+                </tr>
+            </table>
         </section>
     </main>
 </body>
