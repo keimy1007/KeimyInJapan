@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Calendar</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* main の縦方向のスペースを削減 */
+        main {
+            padding: 2rem 1rem; /* 必要最小限の余裕 */
+            margin: 0; /* 中央寄せの余白を削除 */
+        }
+
+        /* iframe の余分なスペースを削除 */
+        iframe {
+            display: block;
+            width: 100%;
+            border: none;
+            margin: 0; /* 余分な上下スペースを削除 */
+            padding: 0;
+        }
+    </style>
     <script defer>
         document.addEventListener('DOMContentLoaded', () => {
             const calendarContainer = document.getElementById('calendar-container');
@@ -110,6 +126,5 @@
             <iframe id="blog-content-frame" src="" frameborder="0"></iframe>
         </section>
     </main>
-
 </body>
 </html>

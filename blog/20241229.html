@@ -6,18 +6,27 @@
     <title>Blog</title>
     <link rel="stylesheet" href="../style.css">
     <style>
+        /* main の余分な縦方向スペースを削減 */
+        main {
+            padding: 2rem 1rem; /* 必要最小限の余裕 */
+            margin: 0; /* 上下の余計なスペースを削除 */
+        }
+
+        /* table の基本スタイル */
         table {
             width: 100%;
             border-collapse: collapse;
-            /* margin: 20px 0; */
         }
+
         table, th, td {
             border: 1px solid black;
         }
+
         th, td {
             padding: 10px;
             text-align: left;
         }
+
         th {
             background-color: #421dd3;
             color: white;
