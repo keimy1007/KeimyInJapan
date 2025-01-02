@@ -1,0 +1,16 @@
+.DS_Store
+
+.env
+.cache/
+.cargo/
+legacy*
+tmp*
+
+V1*
+V2*
+V3*
+V4*
+V5*
+venv*
+.vscode*
+V5/index.html
