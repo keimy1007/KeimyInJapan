@@ -57,7 +57,7 @@
                         link.textContent = day;
                         link.className = "active-link";
 
-                        // コンテンツを読み込むクリックイベント
+                        // 記事を読み込むクリックイベント
                         link.addEventListener('click', (event) => {
                             event.preventDefault();
                             loadBlogContent(filePath);
@@ -111,7 +111,6 @@
     <main>
         <!-- カレンダーセクション -->
         <section id="blog-calendar">
-            <!-- <h3>Calender</h3> -->
             <div id="calendar-controls">
                 <button id="prev-month">Previous</button>
                 <span id="current-month"></span>
@@ -122,11 +121,55 @@
 
         <!-- 記事コンテンツセクション -->
         <section id="blog-content">
-            <!-- <h3>Articles</h3> -->
             <div id="blog-content-container">
                 <p>Pick an Article from the Calendar</p>
             </div>
         </section>
     </main>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #blog-calendar, #blog-content {
+            margin: 0 auto;
+            padding: 10px;
+            max-width: 900px;
+        }
+        #calendar-controls {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar th, .calendar td {
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        .calendar .active-link {
+            color: blue;
+            cursor: pointer;
+        }
+        .calendar .inactive {
+            color: #ccc;
+        }
+        iframe {
+            display: block;
+            border: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #blog-content-container {
+            min-height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </body>
 </html>
