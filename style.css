@@ -8,6 +8,7 @@
     --bg-section: #0a0a0a;
 }
 
+/* 全体のリセット */
 * {
     margin: 0;
     padding: 0;
@@ -19,16 +20,16 @@ body {
     padding: 0;
     background: var(--bg-dark);
     color: var(--text);
-    font-family: Arial, 'Helvetica Neue', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 /* Header Animation */
 @keyframes gradientBG {
-    0% { background-position: 0% 50% }
-    50% { background-position: 100% 50% }
-    100% { background-position: 0% 50% }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header {
@@ -51,6 +52,7 @@ header {
     justify-content: space-between;
 }
 
+/* Logo */
 .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
@@ -80,6 +82,7 @@ header {
     transform-origin: left;
 }
 
+/* Navigation */
 nav {
     display: flex;
     gap: 2rem;
@@ -118,13 +121,7 @@ nav a:hover::before {
     transform-origin: left;
 }
 
-main {
-    padding: 8rem 2rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Section Hover Effects */
+/* Section Styles */
 section {
     background: var(--bg-section);
     border-radius: 15px;
@@ -134,19 +131,6 @@ section {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    margin-bottom: 1rem;
-}
-
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(0, 170, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
 }
 
 section:hover {
@@ -154,10 +138,7 @@ section:hover {
     box-shadow: 0 10px 30px rgba(0, 170, 255, 0.1);
 }
 
-section:hover::before {
-    transform: translateX(100%);
-}
-
+/* Titles */
 h2 {
     font-family: 'Orbitron', sans-serif;
     color: var(--primary);
@@ -182,6 +163,7 @@ h3 {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* Lists */
 ul {
     list-style: none;
 }
@@ -206,6 +188,7 @@ ul li strong {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* Links */
 a {
     color: var(--primary);
     text-decoration: none;
@@ -213,9 +196,10 @@ a {
 }
 
 a:hover {
-    color: var(--text);
+    color: var(--accent);
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
@@ -224,7 +208,7 @@ footer {
     border-top: 1px solid rgba(0, 170, 255, 0.1);
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -255,97 +239,7 @@ footer {
         gap: 1rem;
     }
 
-    main {
-        padding: 6rem 1rem 1rem;
-    }
-
     section {
         padding: 1.5rem;
     }
-}
-
-/* iframe の距離調整 */
-iframe {
-    margin: 0; /* 余分なマージンを削除 */
-    padding: 0; /* パディングを削除 */
-    display: block; /* 不要な余白を排除 */
-    width: 100%;
-
-    border: 1px solid rgba(255, 255, 255, 0.1); /* 必要に応じて維持 */
-    border-radius: 8px; /* 角の丸みを維持 */
-    background: var(--bg-section);
-}
-
-/* カレンダー全体 */
-.calendar {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.calendar th, .calendar td {
-    padding: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.calendar th {
-    background: var(--primary-dark);
-    color: var(--text);
-}
-
-.calendar td {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text);
-    text-align: center;
-}
-
-/* リンクのスタイル */
-.calendar td a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.calendar td a:hover {
-    color: var(--accent);
-}
-
-/* アクティブなリンク（リンクが存在する日付） */
-.calendar td a.active-link {
-    font-weight: bold;
-}
-
-/* 無効な日付（リンクが存在しない日付） */
-.calendar td.inactive {
-    color: var(--text-secondary);
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-/* カレンダーのコントロール */
-#calendar-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-    gap: 1rem;
-}
-
-#calendar-controls button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--primary-dark);
-    color: var(--text);
-    cursor: pointer;
-}
-
-#calendar-controls button:hover {
-    background-color: var(--primary);
-}
-
-#current-month {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: var(--primary);
 }

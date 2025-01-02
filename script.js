@@ -2,6 +2,7 @@ const calendarContainer = document.getElementById('calendar-container');
 const currentMonthSpan = document.getElementById('current-month');
 const prevMonthBtn = document.getElementById('prev-month');
 const nextMonthBtn = document.getElementById('next-month');
+const blogContentFrame = document.getElementById('blog-content-frame'); // iframe要素を取得
 
 let currentDate = new Date();
 
@@ -47,10 +48,10 @@ async function renderCalendar(date) {
             link.textContent = day;
             link.className = "active-link";
 
-            // ページ遷移後、カレンダーを再初期化するためのクリックイベント
+            // iframe内にページを読み込むクリックイベント
             link.addEventListener('click', (event) => {
                 event.preventDefault();
-                window.location.href = link.href; // 現在のiframe内で遷移
+                loadContentInIframe(filePath);
             });
 
             cell.appendChild(link);
@@ -74,6 +75,16 @@ async function renderCalendar(date) {
 function changeMonth(offset) {
     currentDate.setMonth(currentDate.getMonth() + offset);
     renderCalendar(currentDate);
+}
+
+function loadContentInIframe(filePath) {
+    blogContentFrame.src = filePath;
+
+    // iframeの高さを動的に調整
+    blogContentFrame.onload = function () {
+        const iframeDoc = blogContentFrame.contentWindow.document;
+        blogContentFrame.style.height = iframeDoc.body.scrollHeight + "px";
+    };
 }
 
 // 前月・次月ボタンにイベントリスナーを登録
