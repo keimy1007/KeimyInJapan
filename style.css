@@ -290,7 +290,7 @@ iframe {
 }
 
 .calendar th {
-    background: var(--primary-dark);
+    background: var(--accent);
     color: var(--text);
 }
 
@@ -335,7 +335,7 @@ iframe {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
-    background-color: var(--primary-dark);
+    background-color: var(--accent);
     color: var(--text);
     cursor: pointer;
 }
