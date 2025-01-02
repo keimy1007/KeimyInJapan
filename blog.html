@@ -11,7 +11,7 @@
             const currentMonthSpan = document.getElementById('current-month');
             const prevMonthBtn = document.getElementById('prev-month');
             const nextMonthBtn = document.getElementById('next-month');
-            const blogContentContainer = document.getElementById('blog-content-container');
+            const blogContentFrame = document.getElementById('blog-content-frame');
             
             let currentDate = new Date();
 
@@ -60,7 +60,7 @@
                         // 記事を読み込むクリックイベント
                         link.addEventListener('click', (event) => {
                             event.preventDefault();
-                            loadBlogContent(filePath);
+                            blogContentFrame.src = filePath;
                         });
 
                         cell.appendChild(link);
@@ -86,20 +86,6 @@
                 renderCalendar(currentDate);
             }
 
-            async function loadBlogContent(filePath) {
-                try {
-                    const response = await fetch(filePath);
-                    if (response.ok) {
-                        const content = await response.text();
-                        blogContentContainer.innerHTML = content;
-                    } else {
-                        blogContentContainer.innerHTML = '<p>記事が見つかりません。</p>';
-                    }
-                } catch (error) {
-                    blogContentContainer.innerHTML = '<p>記事を読み込めませんでした。</p>';
-                }
-            }
-
             prevMonthBtn.addEventListener('click', () => changeMonth(-1));
             nextMonthBtn.addEventListener('click', () => changeMonth(1));
 
@@ -119,11 +105,9 @@
             <div id="calendar-container"></div>
         </section>
 
-        <!-- 記事コンテンツセクション -->
+        <!-- 記事表示エリア -->
         <section id="blog-content">
-            <div id="blog-content-container">
-                <p>Pick an Article from the Calendar</p>
-            </div>
+            <iframe id="blog-content-frame" src="" frameborder="0"></iframe>
         </section>
     </main>
     <style>
@@ -131,6 +115,8 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #000; /* 黒背景 */
+            color: #fff; /* 白文字 */
         }
         #blog-calendar, #blog-content {
             margin: 0 auto;
@@ -151,24 +137,22 @@
             border: 1px solid #ccc;
         }
         .calendar .active-link {
-            color: blue;
+            color: #4caf50;
+            text-decoration: none;
             cursor: pointer;
         }
         .calendar .inactive {
-            color: #ccc;
+            color: #666;
         }
         iframe {
             display: block;
-            border: none;
             width: 100%;
+            height: 300px; /* 初期高さを指定 */
+            border: none;
             margin: 0;
             padding: 0;
-        }
-        #blog-content-container {
-            min-height: 300px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background-color: #f9f9f9;
+            background-color: #111; /* 黒に近い背景 */
+            color: #fff;
         }
     </style>
 </body>
