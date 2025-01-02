@@ -123,8 +123,14 @@
 
         <!-- 記事表示エリア -->
         <section id="blog-content">
-            <iframe id="blog-content-frame" src="" frameborder="0"></iframe>
+            <!-- デフォルトメッセージ -->
+            <div id="blog-content-container">
+                <p id="default-message">Pick an Article from the Calendar</p>
+            </div>
+            <!-- 記事を表示するiframe -->
+            <iframe id="blog-content-frame" src="" frameborder="0" style="display: none;"></iframe>
         </section>
+
     </main>
 </body>
 </html>
