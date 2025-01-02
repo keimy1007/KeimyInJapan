@@ -160,7 +160,7 @@ section:hover::before {
 
 h2 {
     font-family: 'Orbitron', sans-serif;
-    color: var(--primary);
+    color: var(--accent);
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
