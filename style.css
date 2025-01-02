@@ -8,7 +8,7 @@
     --bg-section: #0a0a0a;
 }
 
-/* 全体のリセット */
+/* ======== 全体リセット ======== */
 * {
     margin: 0;
     padding: 0;
@@ -23,11 +23,11 @@ body {
     overflow-x: hidden;
 }
 
-/* Header Animation */
+/* ======== ヘッダー ======== */
 @keyframes gradientBG {
-    0% { background-position: 0% 50% }
-    50% { background-position: 100% 50% }
-    100% { background-position: 0% 50% }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header {
@@ -50,6 +50,7 @@ header {
     justify-content: space-between;
 }
 
+/* ======== ロゴ ======== */
 .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
@@ -79,6 +80,7 @@ header {
     transform-origin: left;
 }
 
+/* ======== ナビゲーション ======== */
 nav {
     display: flex;
     gap: 2rem;
@@ -117,35 +119,29 @@ nav a:hover::before {
     transform-origin: left;
 }
 
+/* ======== メインコンテンツ ======== */
 main {
-    padding: 8rem 2rem 2rem;
+    padding: 8rem 2rem 2rem; /* デスクトップ */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Section Hover Effects */
+@media (max-width: 768px) {
+    main {
+        padding: 6rem 1rem 1rem; /* モバイル用 */
+    }
+}
+
+/* ======== セクション ======== */
 section {
     background: var(--bg-section);
     border-radius: 15px;
     padding: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     border: 1px solid rgba(0, 170, 255, 0.1);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    margin-bottom: 1rem;
-}
-
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(0, 170, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
 }
 
 section:hover {
@@ -153,142 +149,42 @@ section:hover {
     box-shadow: 0 10px 30px rgba(0, 170, 255, 0.1);
 }
 
-section:hover::before {
-    transform: translateX(100%);
-}
-
-h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: var(--primary);
-}
-
-h3 {
-    color: var(--text);
-    margin: 1.5rem 0 1rem;
-    font-family: 'Orbitron', sans-serif;
-}
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-ul li:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(10px);
-}
-
-ul li strong {
-    color: var(--primary);
-    display: block;
-    margin-bottom: 0.5rem;
-    font-family: 'Orbitron', sans-serif;
-}
-
-a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--accent);
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-dark);
-    color: var(--text-secondary);
-    border-top: 1px solid rgba(0, 170, 255, 0.1);
-}
-
-/* iframe の距離調整 */
-iframe {
-    margin: 0; /* 余分なマージンを削除 */
-    padding: 0; /* パディングを削除 */
-    display: block; /* 不要な余白を排除 */
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* 必要に応じて維持 */
-    border-radius: 8px; /* 角の丸みを維持 */
-    background: var(--bg-section);
-}
-
-/* カレンダー全体 */
+/* ======== カレンダー ======== */
 .calendar {
     width: 100%;
     border-collapse: collapse;
-    text-align: center;
     margin-top: 1rem;
+    text-align: center;
 }
 
 .calendar th, .calendar td {
     padding: 0.5rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
 }
 
 .calendar th {
     background: var(--primary-dark);
-    color: var(--text);
 }
 
-.calendar td {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text);
-    text-align: center;
-}
-
-/* リンクのスタイル */
 .calendar td a {
     color: var(--primary);
     text-decoration: none;
+    font-weight: bold;
 }
 
 .calendar td a:hover {
     color: var(--accent);
 }
 
-/* アクティブなリンク（リンクが存在する日付） */
-.calendar td a.active-link {
-    font-weight: bold;
-}
-
-/* 無効な日付（リンクが存在しない日付） */
 .calendar td.inactive {
     color: var(--text-secondary);
     pointer-events: none;
     opacity: 0.5;
 }
 
-/* カレンダーのコントロール */
-#calendar-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-    gap: 1rem;
-}
-
+/* ======== ボタン ======== */
 #calendar-controls button {
     padding: 0.5rem 1rem;
     border: none;
@@ -296,19 +192,25 @@ iframe {
     background-color: var(--primary-dark);
     color: var(--text);
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #calendar-controls button:hover {
     background-color: var(--primary);
 }
 
-#current-month {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: var(--primary);
+/* ======== iframe ======== */
+iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    background: var(--bg-section);
 }
 
-/* Custom Scrollbar */
+/* ======== スクロールバー ======== */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -322,7 +224,7 @@ iframe {
     border-radius: 4px;
 }
 
-/* Responsive Design */
+/* ======== レスポンシブ対応 ======== */
 @media (max-width: 768px) {
     header {
         padding: 1rem;
@@ -337,10 +239,6 @@ iframe {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
-    }
-
-    main {
-        padding: 6rem 1rem 1rem;
     }
 
     section {
