@@ -1,7 +1,7 @@
 :root {
     --primary: rgb(30, 164, 231);
     --primary-dark: #0077cc;
-    --accent: #323ff0;
+    --accent: #d59a04;
     --text: #ffffff;
     --text-secondary: #a0a0a0;
     --bg-dark: #000;
@@ -166,14 +166,15 @@ h2 {
     display: inline-block;
 }
 
+/* 下線みたいなやつ */
 h2::after {
     content: '';
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 50px;
+    width: 80px;
     height: 2px;
-    background: var(--primary);
+    background: var(--accent);
 }
 
 h3 {
