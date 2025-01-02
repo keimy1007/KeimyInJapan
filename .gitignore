@@ -6,6 +6,7 @@
 legacy*
 tmp*
 
+# バックアップ
 V1*
 V2*
 V3*
@@ -17,6 +18,7 @@ V8*
 V9*
 V10*
 
+
+# 環境
 venv*
 .vscode*
-V5/index.html
