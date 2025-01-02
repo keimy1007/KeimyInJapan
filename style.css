@@ -1,6 +1,6 @@
 :root {
     --primary: rgb(30, 164, 231);
-    --primary-dark: #0077cc;
+    --primary-dark: #035b9a;
     --accent: #d59a04;
     --text: #ffffff;
     --text-secondary: #a0a0a0;
@@ -336,13 +336,13 @@ iframe {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
-    background-color: var(--accent);
+    background-color: var(--primary);
     color: var(--text);
     cursor: pointer;
 }
 
 #calendar-controls button:hover {
-    background-color: var(--primary);
+    background-color: var(--accent);
 }
 
 #current-month {
