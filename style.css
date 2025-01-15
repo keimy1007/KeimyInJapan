@@ -4,8 +4,8 @@
     --accent: #d59a04;
     --text: #ffffff;
     --text-secondary: #a0a0a0;
-    --bg-dark: #000;
-    --bg-section: #0a0a0a;
+    --bg-dark: #1212126b;
+    --bg-section: #343434ec;
 }
 
 * {
@@ -179,7 +179,8 @@ h2::after {
 
 h3 {
     color: var(--text);
-    margin: 1.5rem 0 1rem;
+    /* 上下と左右 */
+    margin: 1rem 0rem;
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -291,7 +292,7 @@ iframe {
 }
 
 .calendar th {
-    background: var(--accent);
+    background: var(--primary);
     color: var(--text);
 }
 
@@ -308,7 +309,7 @@ iframe {
 }
 
 .calendar td a:hover {
-    color: var(--accent);
+    color: var(--primary-dark);
 }
 
 /* アクティブなリンク（リンクが存在する日付） */
