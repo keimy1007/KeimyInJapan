@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     async function checkFilesExistence(dates) {
         const checks = dates.map(date => {
-            const url = `blog/${date}.html`;
+            const url = `../blog/${date}.html`;
             if (fileCache.has(url)) {
                 return Promise.resolve(fileCache.get(url));
             }
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let day = 1; day <= daysInMonth; day++) {
             const cell = document.createElement('td');
             const formattedDate = dates[day - 1];
-            const filePath = `blog/${formattedDate}.html`;
+            const filePath = `../blog/${formattedDate}.html`;
 
             if (fileExistence[day - 1]) {
                 const link = document.createElement('a');
