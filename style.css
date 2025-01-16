@@ -282,8 +282,8 @@ iframe {
 
     border: 1px solid rgba(255, 255, 255, 0.1); /* 必要に応じて維持 */
     border-radius: 0px; /* 角の丸み。数字が大きいほど丸い */
-    /* overflow: hidden;  */
-    /* box-shadow: none;  */
+    overflow: hidden; 
+    box-shadow: none; 
 }
 
 /* カレンダー全体 */
