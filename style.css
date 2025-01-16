@@ -312,7 +312,7 @@ iframe {
 
 /* リンクのスタイル */
 .calendar td a {
-    color: var(--primary-dark);
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -357,5 +357,5 @@ iframe {
 #current-month {
     font-weight: bold;
     font-size: 1.2rem;
-    color: var(--primary-dark);
+    color: var(--text);
 }
