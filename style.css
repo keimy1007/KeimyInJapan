@@ -1,11 +1,12 @@
+
 :root {
     --primary: rgb(30, 164, 231);
     --primary-dark: #035b9a;
     --accent: #d59a04;
     --text: #ffffff;
     --text-secondary: #a0a0a0;
-    --bg-dark: #1212126b;
-    --bg-section: #343434ec;
+    --bg-dark: #202124;
+    --bg-section: #303134;
 }
 
 * {
@@ -274,7 +275,7 @@ iframe {
     width: 100%;
 
     border: 1px solid rgba(255, 255, 255, 0.1); /* 必要に応じて維持 */
-    border-radius: 8px; /* 角の丸みを維持 */
+    border-radius: 2px; /* 角の丸み。数字が大きいほど丸い */
     background: var(--bg-section);
 }
 
@@ -292,7 +293,7 @@ iframe {
 }
 
 .calendar th {
-    background: var(--primary);
+    background: var(--primary-dark);
     color: var(--text);
 }
 
@@ -304,12 +305,12 @@ iframe {
 
 /* リンクのスタイル */
 .calendar td a {
-    color: var(--primary);
+    color: var(--primary-dark);
     text-decoration: none;
 }
 
 .calendar td a:hover {
-    color: var(--primary-dark);
+    color: var(--primary);
 }
 
 /* アクティブなリンク（リンクが存在する日付） */
@@ -337,17 +338,17 @@ iframe {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     color: var(--text);
     cursor: pointer;
 }
 
 #calendar-controls button:hover {
-    background-color: var(--accent);
+    background-color: var(--primary);
 }
 
 #current-month {
     font-weight: bold;
     font-size: 1.2rem;
-    color: var(--primary);
+    color: var(--primary-dark);
 }
