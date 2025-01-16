@@ -5,8 +5,8 @@
     --accent: #d59a04;
     --text: #ffffff;
     --text-secondary: #a0a0a0;
-    --bg-dark: #18191b;
-    --bg-section: #242526;
+    --bg-dark: #0e0f10;
+    --bg-section: #1a1b1c;
 }
 
 * {
@@ -273,10 +273,12 @@ iframe {
     padding: 0; /* パディングを削除 */
     display: block; /* 不要な余白を排除 */
     width: 100%;
+    background: var(--bg-section);
 
     border: 1px solid rgba(255, 255, 255, 0.1); /* 必要に応じて維持 */
     border-radius: 0px; /* 角の丸み。数字が大きいほど丸い */
-    background: var(--bg-section);
+    overflow: hidden; /* 内部の余白や表示を隠す */
+    box-shadow: none; /* 不要な影を削除 */
 }
 
 /* カレンダー全体 */
