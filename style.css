@@ -5,8 +5,8 @@
     --accent: #d59a04;
     --text: #ffffff;
     --text-secondary: #a0a0a0;
-    --bg-dark: #202124;
-    --bg-section: #303134;
+    --bg-dark: #18191b;
+    --bg-section: #242526;
 }
 
 * {
@@ -275,7 +275,7 @@ iframe {
     width: 100%;
 
     border: 1px solid rgba(255, 255, 255, 0.1); /* 必要に応じて維持 */
-    border-radius: 2px; /* 角の丸み。数字が大きいほど丸い */
+    border-radius: 0px; /* 角の丸み。数字が大きいほど丸い */
     background: var(--bg-section);
 }
 
