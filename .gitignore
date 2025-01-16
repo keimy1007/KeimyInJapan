@@ -3,7 +3,7 @@
 .env
 .cache/
 .cargo/
-legacy*
+*legacy*
 tmp*
 
 # バックアップ
