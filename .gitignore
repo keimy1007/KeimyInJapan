@@ -5,6 +5,7 @@
 .cargo/
 *legacy*
 tmp*
+wgc*
 
 # バックアップ
 V1*
