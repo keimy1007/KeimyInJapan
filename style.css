@@ -7,10 +7,11 @@
 
 body {
     font-family: Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #2c3e50;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
+    font-size: 0.9em;
 }
 
 .container {
@@ -875,4 +876,50 @@ footer p {
         padding: 8px 16px;
         font-size: 0.85em;
     }
+}
+
+/* Publications Section Styles */
+.publication-category {
+    margin-bottom: 2em;
+}
+
+.publication-category h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+.pub-year {
+    font-weight: bold;
+    color: #34495e;
+    margin: 1.5em 0 0.5em 0;
+    padding: 0.3em 0.8em;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-left: 4px solid #3498db;
+    border-radius: 3px;
+}
+
+.compact-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5em 0 1.5em 0;
+}
+
+.compact-list li {
+    margin-bottom: 0.8em;
+    padding: 0.6em;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    border-left: 3px solid #3498db;
+    line-height: 1.4;
+}
+
+.compact-list li strong {
+    color: #2c3e50;
+}
+
+.compact-list li em {
+    color: #7f8c8d;
+    font-style: italic;
 }
