@@ -1,146 +1,179 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const calendarContainer = document.getElementById('calendar-container');
-    const currentMonthSpan = document.getElementById('current-month');
-    const prevMonthBtn = document.getElementById('prev-month');
-    const nextMonthBtn = document.getElementById('next-month');
-    const blogContentContainer = document.getElementById('blog-content-container');
+// DOM Content Loaded Event
+document.addEventListener('DOMContentLoaded', function() {
+    // Set current year in footer
+    const currentYear = new Date().getFullYear();
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = currentYear;
+    }
 
-    let currentDate = new Date();
-    const fileCache = new Map(); // キャッシュを導入
+    // Language toggle functionality
+    const languageToggle = document.getElementById('lang-toggle');
+    let isJapanese = false;
 
-    /**
-     * 指定したURLの存在を確認する（キャッシュを利用）。
-     * @param {string[]} dates - チェックする日付リスト
-     * @returns {Promise<boolean[]>} 各URLの存在結果
-     */
-    async function checkFilesExistence(dates) {
-        const checks = dates.map(date => {
-            const url = `../blog/${date}.html`;
-            if (fileCache.has(url)) {
-                return Promise.resolve(fileCache.get(url));
-            }
-            return fetch(url, { method: 'HEAD' })
-                .then(res => {
-                    const exists = res.ok;
-                    fileCache.set(url, exists);
-                    return exists;
-                })
-                .catch(() => {
-                    fileCache.set(url, false);
-                    return false;
-                });
+    if (languageToggle) {
+        languageToggle.addEventListener('click', function() {
+            toggleLanguage();
         });
-        return Promise.all(checks);
     }
 
-    /**
-     * カレンダーを描画する。
-     * @param {Date} date - 描画する月のDateオブジェクト
-     */
-    async function renderCalendar(date) {
-        calendarContainer.innerHTML = ''; // カレンダーをリセット
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-        const firstDayOfWeek = new Date(year, month, 1).getDay();
-
-        currentMonthSpan.textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
-
-        const table = document.createElement('table');
-        table.className = "calendar";
-
-        // 曜日ヘッダーの作成
-        const headerRow = document.createElement('tr');
-        ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(day => {
-            const th = document.createElement('th');
-            th.textContent = day;
-            headerRow.appendChild(th);
-        });
-        table.appendChild(headerRow);
-
-        // 空白セルを追加
-        let row = document.createElement('tr');
-        for (let i = 0; i < firstDayOfWeek; i++) {
-            row.appendChild(document.createElement('td'));
-        }
-
-        // 日付リストを生成
-        const dates = [];
-        for (let day = 1; day <= daysInMonth; day++) {
-            const formattedDate = `${year}${String(month + 1).padStart(2, '0')}${String(day).padStart(2, '0')}`;
-            dates.push(formattedDate);
-        }
-
-        // 日付ごとのファイル存在チェック
-        const fileExistence = await checkFilesExistence(dates);
-
-        // 日付セルを生成
-        for (let day = 1; day <= daysInMonth; day++) {
-            const cell = document.createElement('td');
-            const formattedDate = dates[day - 1];
-            const filePath = `../blog/${formattedDate}.html`;
-
-            if (fileExistence[day - 1]) {
-                const link = document.createElement('a');
-                link.href = filePath;
-                link.textContent = day;
-                link.className = "active-link";
-
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    loadBlogContent(filePath);
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
-
-                cell.appendChild(link);
-            } else {
-                cell.textContent = day;
-                cell.className = "inactive";
             }
+        });
+    });
 
-            row.appendChild(cell);
-
-            if ((firstDayOfWeek + day) % 7 === 0) {
-                table.appendChild(row);
-                row = document.createElement('tr');
-            }
-        }
-
-        // 最後の行を追加
-        table.appendChild(row);
-        calendarContainer.appendChild(table);
-    }
-
-    /**
-     * 指定したファイルのコンテンツをロードする。
-     * @param {string} filePath - 読み込むファイルのパス
-     */
-    async function loadBlogContent(filePath) {
-        try {
-            const response = await fetch(filePath);
-            if (response.ok) {
-                const content = await response.text();
-                blogContentContainer.innerHTML = content;
-            } else {
-                blogContentContainer.innerHTML = '<p>記事が見つかりません。</p>';
-            }
-        } catch (error) {
-            blogContentContainer.innerHTML = '<p>記事を読み込めませんでした。</p>';
+    // Language toggle function
+    function toggleLanguage() {
+        isJapanese = !isJapanese;
+        
+        if (isJapanese) {
+            switchToJapanese();
+        } else {
+            switchToEnglish();
         }
     }
 
-    /**
-     * 月を変更してカレンダーを更新する。
-     * @param {number} offset - 現在の月からのオフセット
-     */
-    function changeMonth(offset) {
-        currentDate.setMonth(currentDate.getMonth() + offset);
-        renderCalendar(currentDate);
+    function switchToJapanese() {
+        // Update page title
+        document.title = 'ケイミー・イン・ジャパン (佐野医学AI研究所)';
+        
+        // Update main heading
+        document.querySelector('.logo-section h1').textContent = 'ケイミー・イン・ジャパン';
+        document.querySelector('.subtitle').textContent = '佐野医学AI研究所';
+        
+        // Update navigation
+        const navItems = document.querySelectorAll('.nav-menu a');
+        const japaneseNavText = ['ホーム', '研究', '論文', 'ブログ', '連絡先'];
+        navItems.forEach((item, index) => {
+            item.textContent = japaneseNavText[index];
+        });
+        
+        // Update main content
+        document.querySelector('.profile-text h2').textContent = 'ケイミー・イン・ジャパンへようこそ';
+        document.querySelector('.intro-text').innerHTML = 
+            'ポーランド・佐野計算医学センターの医学AI研究者<br>現在、計算医学とヘルスケアイノベーションに焦点を当てた医学AIアプリケーションの研究開発を行っています。';
+        
+        // Update research section
+        document.querySelector('.research-section h2').textContent = '研究分野';
+        const researchItems = document.querySelectorAll('.research-item');
+        const japaneseResearchTitles = ['医学AI', '計算医学', 'ヘルスケア技術'];
+        const japaneseResearchDescriptions = [
+            '医学診断と治療最適化のためのAI駆動ソリューションの開発。',
+            '複雑な医学問題の解決と患者転帰の改善のための計算手法の応用。',
+            'ヘルスケア提供とアクセシビリティを向上させる革新的技術の創造。'
+        ];
+        
+        researchItems.forEach((item, index) => {
+            item.querySelector('h3').textContent = japaneseResearchTitles[index];
+            item.querySelector('p').textContent = japaneseResearchDescriptions[index];
+        });
+        
+        // Update other sections
+        document.querySelector('.publications-section h2').textContent = '主要論文';
+        document.querySelector('.blog-section h2').textContent = 'ブログ・更新情報';
+        document.querySelector('.contact-section h2').textContent = '連絡先';
+        
+        // Update language toggle button
+        languageToggle.textContent = 'EN / 日本語';
     }
 
-    // イベントリスナーの設定
-    prevMonthBtn.addEventListener('click', () => changeMonth(-1));
-    nextMonthBtn.addEventListener('click', () => changeMonth(1));
+    function switchToEnglish() {
+        // Update page title
+        document.title = 'Keimy in Japan (Sano Medical AI Lab)';
+        
+        // Update main heading
+        document.querySelector('.logo-section h1').textContent = 'Keimy in Japan';
+        document.querySelector('.subtitle').textContent = 'Sano Medical AI Lab';
+        
+        // Update navigation
+        const navItems = document.querySelectorAll('.nav-menu a');
+        const englishNavText = ['Home', 'Research', 'Publications', 'Blog', 'Contact'];
+        navItems.forEach((item, index) => {
+            item.textContent = englishNavText[index];
+        });
+        
+        // Update main content
+        document.querySelector('.profile-text h2').textContent = 'Welcome to Keimy in Japan';
+        document.querySelector('.intro-text').innerHTML = 
+            'Medical AI Researcher at Sano Centre for Computational Medicine, Poland<br>Currently researching and developing medical AI applications with a focus on computational medicine and healthcare innovation.';
+        
+        // Update research section
+        document.querySelector('.research-section h2').textContent = 'Research Areas';
+        const researchItems = document.querySelectorAll('.research-item');
+        const englishResearchTitles = ['Medical AI', 'Computational Medicine', 'Healthcare Technology'];
+        const englishResearchDescriptions = [
+            'Developing AI-powered solutions for medical diagnosis and treatment optimization.',
+            'Applying computational methods to solve complex medical problems and improve patient outcomes.',
+            'Creating innovative technologies to enhance healthcare delivery and accessibility.'
+        ];
+        
+        researchItems.forEach((item, index) => {
+            item.querySelector('h3').textContent = englishResearchTitles[index];
+            item.querySelector('p').textContent = englishResearchDescriptions[index];
+        });
+        
+        // Update other sections
+        document.querySelector('.publications-section h2').textContent = 'Selected Publications';
+        document.querySelector('.blog-section h2').textContent = 'Blog & Updates';
+        document.querySelector('.contact-section h2').textContent = 'Contact Information';
+        
+        // Update language toggle button
+        languageToggle.textContent = '日本語 / EN';
+    }
 
-    // 初期カレンダーの描画
-    renderCalendar(currentDate);
+    // Profile image fallback
+    const profileImage = document.getElementById('profile-img');
+    if (profileImage) {
+        profileImage.addEventListener('error', function() {
+            this.style.display = 'none';
+            const placeholder = document.createElement('div');
+            placeholder.style.width = '200px';
+            placeholder.style.height = '250px';
+            placeholder.style.backgroundColor = '#f0f0f0';
+            placeholder.style.border = '1px solid #ddd';
+            placeholder.style.display = 'flex';
+            placeholder.style.alignItems = 'center';
+            placeholder.style.justifyContent = 'center';
+            placeholder.style.color = '#666';
+            placeholder.style.fontSize = '14px';
+            placeholder.textContent = 'Profile Image';
+            this.parentNode.insertBefore(placeholder, this);
+        });
+    }
+});
+
+// Utility functions
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Add scroll-to-top functionality
+window.addEventListener('scroll', function() {
+    const scrollButton = document.getElementById('scroll-to-top');
+    if (scrollButton) {
+        if (window.pageYOffset > 300) {
+            scrollButton.style.display = 'block';
+        } else {
+            scrollButton.style.display = 'none';
+        }
+    }
 });

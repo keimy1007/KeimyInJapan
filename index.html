@@ -3,83 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keimy-In-Japan</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Keimy in Japan (Sano Medical AI Lab)</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Adjust scroll position for fixed header */
-        html {
-            scroll-padding-top: 80px; /* Adjust based on header height */
-        }
-        section {
-            scroll-margin-top: 100px; /* Ensures the logo remains visible above */
-        }
-    </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="logo">Keimy-In-Japan</div>
-            <nav>
-                <a href="#intro"><i class="fas fa-home"></i> Introduction</a>
-                <a href="#tools"><i class="fas fa-tools"></i> Tools</a>
-                <a href="#databases"><i class="fas fa-database"></i> Databases</a>
-                <a href="#blog"><i class="fas fa-calendar-alt"></i> Blog</a>
-                <a href="#works"><i class="fas fa-trophy"></i> Works</a>
-                <a href="#author"><i class="fas fa-user"></i> Author</a>
-            </nav>
-        </div>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo-section">
+                    <h1>Keimy in Japan</h1>
+                    <p class="subtitle">Sano Medical AI Lab</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="language-toggle">
+                    <button id="lang-toggle">日本語 / EN</button>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
-
-        <!-- イントロ -->
-        <section id="intro">
-            <h2>Introduction</h2>
-            <p>Keimy-In-Japan is a platform that introduces powerful tools and databases for researchers worldwide.</p>
-            <p>It is with deepest pride and greatest pleasure that I invite you "impact the world."</p>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="profile-content">
+                    <div class="profile-image">
+                        <img src="profile.jpg" alt="Keimy Profile" id="profile-img">
+                    </div>
+                    <div class="profile-text">
+                        <h2>Welcome to Keimy in Japan</h2>
+                        <p class="intro-text">
+                            Medical AI Researcher at Sano Centre for Computational Medicine, Poland<br>
+                            Currently researching and developing medical AI applications with a focus on computational medicine and healthcare innovation.
+                        </p>
+                        <div class="contact-info">
+                            <p><strong>Location:</strong> Poland / Japan</p>
+                            <p><strong>Research Interests:</strong> Medical AI, Computational Medicine, Healthcare Technology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- ツール -->
-        <section id="tools">
-            <h2>Tools</h2>
-            <iframe src="section/tools.html" width="100%" height="600" style="border:none;"></iframe>
-        </section>
-        
-        <!-- データベース -->
-        <section id="databases">
-            <h2>Databases</h2>
-            <iframe src="section/databases.html" width="100%" height="600" style="border:none;"></iframe>
-        </section>
-
-        <!-- ブログ -->
-        <section id="blog">
-            <h2>Blog</h2>
-            <iframe src="section/blog.html" width="100%" height="600" style="border:none;"></iframe>
-        </section>
-
-        <!-- 業績情報 -->
-        <section id="works">
-            <h2>Works</h2>
-            <iframe src="section/works.html" width="100%" height="600" style="border:none;"></iframe>
+        <section id="research" class="research-section">
+            <div class="container">
+                <h2>Research Areas</h2>
+                <div class="research-grid">
+                    <div class="research-item">
+                        <h3>Medical AI</h3>
+                        <p>Developing AI-powered solutions for medical diagnosis and treatment optimization.</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>Computational Medicine</h3>
+                        <p>Applying computational methods to solve complex medical problems and improve patient outcomes.</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>Healthcare Technology</h3>
+                        <p>Creating innovative technologies to enhance healthcare delivery and accessibility.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <section id="publications" class="publications-section">
+            <div class="container">
+                <h2>Selected Publications</h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <h4>Recent Research Work</h4>
+                        <p>Publications and research papers will be listed here as they become available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- 作成者情報 -->
-        <section id="author">
-            <h2>About the Author</h2>
-            <p>Learn more about Keimy :</p>
-            <p>
-                <a href="https://researchmap.jp/keimy1007" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-user-graduate"></i> Research Profile (researchmap)
-                </a>
-            </p>
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <h2>Blog & Updates</h2>
+                <div class="blog-preview">
+                    <p>Stay updated with the latest research insights and experiences from Japan.</p>
+                    <a href="section/blog.html" class="blog-link">View All Blog Posts →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Information</h2>
+                <div class="contact-details">
+                    <p><strong>Affiliation:</strong> Sano Centre for Computational Medicine</p>
+                    <p><strong>Location:</strong> Poland / Japan</p>
+                    <p>For research collaboration and inquiries, please reach out through professional channels.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Keimy-In-Japan Info</p>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Keimy in Japan. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
