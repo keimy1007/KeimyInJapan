@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Language toggle function
     function toggleLanguage() {
-        isJapanese = !isJapanese;
+        const currentPage = window.location.pathname;
         
-        if (isJapanese) {
-            switchToJapanese();
+        if (currentPage.includes('index_en.html')) {
+            window.location.href = 'index.html';
         } else {
-            switchToEnglish();
+            window.location.href = 'index_en.html';
         }
     }
 
@@ -239,6 +239,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Global language toggle function for onclick
+function toggleLanguage() {
+    const currentPage = window.location.pathname;
+    
+    if (currentPage.includes('index_en.html')) {
+        window.location.href = 'index.html';
+    } else {
+        window.location.href = 'index_en.html';
+    }
+}
 
 // Utility functions
 function scrollToTop() {
