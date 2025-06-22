@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update main heading
         document.querySelector('.logo-section h1').textContent = 'Kei Sano, MD, PhD.';
-        document.querySelector('.subtitle').textContent = 'Keimy in Japan, Sano Medical AI Lab';
+        document.querySelector('.subtitle').textContent = 'Sano Medical AI Lab';
         
         // Update navigation
         const navItems = document.querySelectorAll('.nav-menu a');
