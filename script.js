@@ -51,31 +51,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function switchToJapanese() {
         // Update page title
-        document.title = 'ケイミー・イン・ジャパン (佐野医学AI研究所)';
+        document.title = 'Kei Sano, MD, PhD (Keimy in Japan)';
         
         // Update main heading
-        document.querySelector('.logo-section h1').textContent = 'ケイミー・イン・ジャパン';
-        document.querySelector('.subtitle').textContent = '佐野医学AI研究所';
+        document.querySelector('.logo-section h1').textContent = 'Kei Sano, MD, PhD (Keimy in Japan)';
+        document.querySelector('.subtitle').textContent = '佐野メディカルAIラボ';
         
         // Update navigation
         const navItems = document.querySelectorAll('.nav-menu a');
-        const japaneseNavText = ['ホーム', '経歴', '研究', '主要業績', '論文', 'ブログ', '連絡先'];
+        const japaneseNavText = ['研究プロフィール', '主要研究', '業績', '連絡先'];
         navItems.forEach((item, index) => {
             item.textContent = japaneseNavText[index];
         });
         
         // Update main content
-        document.querySelector('.profile-text h2').textContent = 'ケイミー・イン・ジャパンへようこそ';
+        document.querySelector('.profile-text h2').textContent = 'Kei Sano, MD, PhD (Keimy in Japan)へようこそ';
         document.querySelector('.intro-text').innerHTML = 
-            'ポーランド・佐野計算医学センターの医学AI研究者<br>人工知能と機械学習を通じて計算医学とヘルスケアイノベーションを推進しています。';
+            '医師・医療AI研究者・JSPS特別研究員PD<br>深層学習とコンピュータビジョンを用いた眼科医療・網膜画像解析・公衆衛生学研究';
         
         // Update contact info
         const contactInfo = document.querySelectorAll('.contact-info p');
         const japaneseContactText = [
-            '<strong>所属:</strong> 佐野計算医学センター',
-            '<strong>拠点:</strong> ポーランド / 日本',
-            '<strong>研究分野:</strong> 医学AI、網膜画像解析、計算医学',
-            '<strong>専門:</strong> 深層学習、コンピュータビジョン、ヘルスケア技術'
+            '<strong>現職:</strong> 日本学術振興会 特別研究員PD・東京慈恵会医科大学附属病院 眼科 助教',
+            '<strong>専門分野:</strong> 眼科学、医療AI、網膜画像解析、公衆衛生学、緑内障スクリーニング',
+            '<strong>技術領域:</strong> 深層学習、コンピュータビジョン、医療データサイエンス、OCT解析',
+            '<strong>学位:</strong> 医学博士（東京慈恵会医科大学、2025年3月取得予定）'
         ];
         contactInfo.forEach((item, index) => {
             item.innerHTML = japaneseContactText[index];
@@ -84,11 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update research section
         document.querySelector('.research-section h2').textContent = '研究分野';
         const researchItems = document.querySelectorAll('.research-item');
-        const japaneseResearchTitles = ['医学AI', '計算医学', 'ヘルスケア技術'];
+        const japaneseResearchTitles = ['緑内障スクリーニング・AI診断', '網膜構造解析・組織学', '眼科痾患の疫学・予防医学'];
         const japaneseResearchDescriptions = [
-            '医学診断と治療最適化のためのAI駆動ソリューションの開発。',
-            '複雑な医学問題の解決と患者転帰の改善のための計算手法の応用。',
-            'ヘルスケア提供とアクセシビリティを向上させる革新的技術の創造。'
+            'Imo screening program (ISP)やDeepISPの開発による短時間高精度緑内障スクリーニング手法の確立',
+            'OCTデータから網膜の個体差や加齢性変化を定量化する新規解析手法の開発',
+            '緑内障の一次予防（飲酒、VDT作業等）から二次・三次予防（早期治療）までの包括的研究'
         ];
         
         researchItems.forEach((item, index) => {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.about-section h2').textContent = '経歴・プロフィール';
             document.querySelector('.bio-section h3').textContent = '略歴';
             document.querySelector('.bio-section p').textContent = 
-                '佐野圭は、ポーランドの佐野計算医学センターに所属する医学AI研究者で、ヘルスケア応用のための革新的な人工知能ソリューションの開発に焦点を当てています。彼の研究は、計算医学、網膜画像解析、および医学データへの深層学習技術の応用に及んでいます。';
+                '佐野 圭（さの けい）は、東京慈恵会医科大学で医学を学び（2012-2018年）、同大学附属病院で臨床研修を経て（2018-2020年）、現在は同大学院博士課程に在学中（2021-2025年）です。東海大学衛生学公衆衛生学に国内留学し、日本学術振興会の特別研究員（DC2：2024-2025年、PD：2025年-現在）として研究を継続し、眼科医療AI・網膜画像解析・公衆衛生学分野で多数の国際論文を発表しています。';
             
             document.querySelector('.education-section h3').textContent = '学歴・経歴';
             const timelineItems = document.querySelectorAll('.timeline-item .content');
@@ -126,9 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Update other sections
-        document.querySelector('.publications-section h2').textContent = '主要論文';
-        document.querySelector('.blog-section h2').textContent = 'ブログ・更新情報';
-        document.querySelector('.contact-section h2').textContent = '連絡先';
+        document.querySelector('.publications-section h2').textContent = '業績';
+        document.querySelector('.contact-section h2').textContent = '連絡先・ブログ';
         
         // Update language toggle button
         languageToggle.textContent = 'EN / 日本語';
@@ -136,31 +135,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function switchToEnglish() {
         // Update page title
-        document.title = 'Keimy in Japan (Sano Medical AI Lab)';
+        document.title = 'Kei Sano, MD, PhD (Keimy in Japan)';
         
         // Update main heading
-        document.querySelector('.logo-section h1').textContent = 'Keimy in Japan';
+        document.querySelector('.logo-section h1').textContent = 'Kei Sano, MD, PhD (Keimy in Japan)';
         document.querySelector('.subtitle').textContent = 'Sano Medical AI Lab';
         
         // Update navigation
         const navItems = document.querySelectorAll('.nav-menu a');
-        const englishNavText = ['Home', 'About', 'Research', 'Selected Works', 'Publications', 'Blog', 'Contact'];
+        const englishNavText = ['Research Profile', 'Selected Works', 'Publications', 'Contact'];
         navItems.forEach((item, index) => {
             item.textContent = englishNavText[index];
         });
         
         // Update main content
-        document.querySelector('.profile-text h2').textContent = 'Welcome to Keimy in Japan';
+        document.querySelector('.profile-text h2').textContent = 'Welcome to Kei Sano, MD, PhD (Keimy in Japan)';
         document.querySelector('.intro-text').innerHTML = 
-            'Medical AI Researcher at Sano Centre for Computational Medicine, Poland<br>Advancing computational medicine and healthcare innovation through artificial intelligence and machine learning.';
+            'Physician, Medical AI Researcher, JSPS Postdoctoral Fellow<br>Advancing ophthalmology, retinal imaging analysis, and public health through deep learning and computer vision.';
         
         // Update contact info
         const contactInfo = document.querySelectorAll('.contact-info p');
         const englishContactText = [
-            '<strong>Affiliation:</strong> Sano Centre for Computational Medicine',
-            '<strong>Location:</strong> Poland / Japan',
-            '<strong>Research Focus:</strong> Medical AI, Retinal Imaging, Computational Medicine',
-            '<strong>Expertise:</strong> Deep Learning, Computer Vision, Healthcare Technology'
+            '<strong>Current Position:</strong> JSPS Postdoctoral Fellow, Assistant Professor at Jikei University School of Medicine Hospital, Department of Ophthalmology',
+            '<strong>Specialization:</strong> Ophthalmology, Medical AI, Retinal Imaging Analysis, Public Health, Glaucoma Screening',
+            '<strong>Technical Expertise:</strong> Deep Learning, Computer Vision, Medical Data Science, OCT Analysis',
+            '<strong>Degree:</strong> MD, PhD (Jikei University School of Medicine, expected March 2025)'
         ];
         contactInfo.forEach((item, index) => {
             item.innerHTML = englishContactText[index];
@@ -169,11 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update research section
         document.querySelector('.research-section h2').textContent = 'Research Areas';
         const researchItems = document.querySelectorAll('.research-item');
-        const englishResearchTitles = ['Medical AI', 'Computational Medicine', 'Healthcare Technology'];
+        const englishResearchTitles = ['Glaucoma Screening & AI Diagnosis', 'Retinal Structure Analysis', 'Ophthalmic Epidemiology & Preventive Medicine'];
         const englishResearchDescriptions = [
-            'Developing AI-powered solutions for medical diagnosis and treatment optimization.',
-            'Applying computational methods to solve complex medical problems and improve patient outcomes.',
-            'Creating innovative technologies to enhance healthcare delivery and accessibility.'
+            'Development of short-duration, high-precision glaucoma screening methods through Imo screening program (ISP) and DeepISP.',
+            'Development of novel analytical methods to quantify individual differences and age-related changes in retinal structure from OCT data.',
+            'Comprehensive research from primary prevention (alcohol, VDT work) to secondary/tertiary prevention (early treatment) of glaucoma.'
         ];
         
         researchItems.forEach((item, index) => {
@@ -186,17 +185,17 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.about-section h2').textContent = 'About';
             document.querySelector('.bio-section h3').textContent = 'Biography';
             document.querySelector('.bio-section p').textContent = 
-                'Kei Sano is a medical AI researcher at the Sano Centre for Computational Medicine in Poland, with a focus on developing innovative artificial intelligence solutions for healthcare applications. His research spans computational medicine, retinal imaging analysis, and the application of deep learning techniques to medical data.';
+                'Kei Sano studied medicine at Jikei University School of Medicine (2012-2018), completed clinical training at the affiliated hospital (2018-2020), and is currently enrolled in the doctoral program (2021-2025). He conducted domestic research at Tokai University Department of Hygiene and Public Health, and continues his research as a JSPS Special Researcher (DC2: 2024-2025, PD: 2025-present), publishing numerous international papers in the fields of ophthalmic medical AI, retinal imaging analysis, and public health.';
             
             document.querySelector('.education-section h3').textContent = 'Education & Career';
             const timelineItems = document.querySelectorAll('.timeline-item .content');
             if (timelineItems.length > 0) {
-                timelineItems[0].querySelector('h4').textContent = 'Medical AI Researcher';
-                timelineItems[0].querySelector('p').textContent = 'Sano Centre for Computational Medicine, Poland';
+                timelineItems[0].querySelector('h4').textContent = 'JSPS Postdoctoral Fellow';
+                timelineItems[0].querySelector('p').textContent = 'Japan Society for the Promotion of Science - Development of novel dementia screening methods using retinal OCT';
             }
             if (timelineItems.length > 1) {
-                timelineItems[1].querySelector('h4').textContent = 'Computational Medicine';
-                timelineItems[1].querySelector('p').textContent = 'Deep learning applications in medical imaging and healthcare innovation';
+                timelineItems[1].querySelector('h4').textContent = 'JSPS Special Researcher DC2';
+                timelineItems[1].querySelector('p').textContent = 'Japan Society for the Promotion of Science - Doctoral program special researcher';
             }
         }
         
@@ -211,9 +210,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Update other sections
-        document.querySelector('.publications-section h2').textContent = 'Selected Publications';
-        document.querySelector('.blog-section h2').textContent = 'Blog & Updates';
-        document.querySelector('.contact-section h2').textContent = 'Contact Information';
+        document.querySelector('.publications-section h2').textContent = 'Publications & Achievements';
+        document.querySelector('.contact-section h2').textContent = 'Contact & Blog';
         
         // Update language toggle button
         languageToggle.textContent = '日本語 / EN';
