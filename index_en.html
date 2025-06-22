@@ -18,7 +18,8 @@
                     <li><a href="#profile">About</a></li>
                     <li><a href="#works">Works</a></li>
                     <li><a href="#publications">Publications</a></li>
-                    <li><a href="#contact">Contact & blog</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="language-toggle">
                     <button id="lang-toggle" onclick="toggleLanguage()">日本語</button>
@@ -137,6 +138,39 @@
                 <div class="works-grid">
                     <div class="work-item featured">
                         <div class="work-image">
+                            <img src="images/DeepISP.png" alt="DeepISP">
+                        </div>
+                        <div class="work-content">
+                            <h3>DeepISP</h3>
+                            <p class="work-description">
+                                A deep learning model that predicts comprehensive visual field (VF) information from a single rapid glaucoma screening test. 
+                                By leveraging the Imo Screening Program (ISP), DeepISP enables personalized assessment of VF longevity and prioritizes patients for clinical follow-up—without requiring a full-length VF exam.
+                            </p>
+                            <div class="work-details">
+                                <div class="work-tech">
+                                    <span class="tech-tag">Deep Learning</span>
+                                    <span class="tech-tag">Glaucoma Screening</span>
+                                    <span class="tech-tag">Visual Field Prediction</span>
+                                    <span class="tech-tag">Risk Assessment</span>
+                                </div>
+                                <div class="work-links">
+                                    <a href="#" class="work-link paper" target="_blank">
+                                        📄 Paper
+                                    </a>
+                                    <a href="#" class="work-link code" target="_blank">
+                                        💻 Code
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="work-publication">
+                                <strong>Publication:</strong> Ophthalmology Science (2025)<br>
+                                "Deep learning–based prediction of glaucoma severity and progression using Imo/TEMPO screening program"
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="work-item">
+                        <div class="work-image">
                             <img src="images/RetinalArchetypes.png" alt="Latent Retinal Archetype">
                         </div>
                         <div class="work-content">
@@ -244,22 +278,24 @@
             </div>
         </section>
 
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <h2>Blog & Updates</h2>
+                <div class="blog-preview">
+                    <p>Stay updated with the latest research insights and experiences from Japan.</p>
+                    <a href="section/blog.html" class="blog-link">View All Blog Posts →</a>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2>Contact</h2>
                 <div class="contact-details">
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <p><strong>Affiliation:</strong> Jikei University Hospital, Department of Ophthalmology</p>
-                        <p><strong>Fellow:</strong> Japan Society for the Promotion of Science (JSPS)</p>
-                        <p><strong>Specialization:</strong> Ophthalmology, Medical AI, Computer Vision, Public Health</p>
-                        <p>For research collaboration and inquiries, please reach out through input forms.</p>
-                    </div>
-                    <div class="blog-info">
-                        <h3>Blog & Updates</h3>
-                        <p>Stay updated with the latest research insights and experiences from Japan.</p>
-                        <a href="section/blog.html" class="blog-link">View All Blog Posts →</a>
-                    </div>
+                    <p><strong>Affiliation:</strong> Jikei University Hospital, Department of Ophthalmology</p>
+                    <p><strong>Fellow:</strong> Japan Society for the Promotion of Science (JSPS)</p>
+                    <p><strong>Specialization:</strong> Ophthalmology, Medical AI, Computer Vision, Public Health</p>
+                    <p>For research collaboration and inquiries, please reach out through input forms.</p>
                 </div>
             </div>
         </section>

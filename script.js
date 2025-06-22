@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update other sections
         document.querySelector('.publications-section h2').textContent = 'Publications / Awards';
+        document.querySelector('.blog-section h2').textContent = 'Blog';
         document.querySelector('.contact-section h2').textContent = 'Contact';
         
         // Update language toggle button
@@ -211,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update other sections
         document.querySelector('.publications-section h2').textContent = 'Publications / Awards';
+        document.querySelector('.blog-section h2').textContent = 'Blog';
         document.querySelector('.contact-section h2').textContent = 'Contact';
         
         // Update language toggle button
