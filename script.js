@@ -51,21 +51,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function switchToJapanese() {
         // Update page title
-        document.title = 'Kei Sano, MD, PhD (Keimy in Japan)';
+        document.title = 'Kei Sano, MD, PhD.';
         
         // Update main heading
-        document.querySelector('.logo-section h1').textContent = 'Kei Sano, MD, PhD (Keimy in Japan)';
-        document.querySelector('.subtitle').textContent = '佐野メディカルAIラボ';
+        document.querySelector('.logo-section h1').textContent = 'Kei Sano, MD, PhD.';
+        document.querySelector('.subtitle').textContent = 'Keimy in Japan, 佐野メディカルAIラボ';
         
         // Update navigation
         const navItems = document.querySelectorAll('.nav-menu a');
-        const japaneseNavText = ['研究プロフィール', '主要研究', '業績', '連絡先'];
+        const japaneseNavText = ['Profile', 'Selected Works', 'Publications / Awards', 'Contact'];
         navItems.forEach((item, index) => {
             item.textContent = japaneseNavText[index];
         });
         
         // Update main content
-        document.querySelector('.profile-text h2').textContent = 'Kei Sano, MD, PhD (Keimy in Japan)へようこそ';
+        document.querySelector('.profile-text h2').textContent = 'Kei Sano, MD, PhD. へようこそ';
         document.querySelector('.intro-text').innerHTML = 
             '医師・医療AI研究者・JSPS特別研究員PD<br>深層学習とコンピュータビジョンを用いた眼科医療・網膜画像解析・公衆衛生学研究';
         
@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Update other sections
-        document.querySelector('.publications-section h2').textContent = '業績';
-        document.querySelector('.contact-section h2').textContent = '連絡先・ブログ';
+        document.querySelector('.publications-section h2').textContent = 'Publications / Awards';
+        document.querySelector('.contact-section h2').textContent = 'Contact';
         
         // Update language toggle button
         languageToggle.textContent = 'EN / 日本語';
@@ -135,21 +135,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function switchToEnglish() {
         // Update page title
-        document.title = 'Kei Sano, MD, PhD (Keimy in Japan)';
+        document.title = 'Kei Sano, MD, PhD.';
         
         // Update main heading
-        document.querySelector('.logo-section h1').textContent = 'Kei Sano, MD, PhD (Keimy in Japan)';
-        document.querySelector('.subtitle').textContent = 'Sano Medical AI Lab';
+        document.querySelector('.logo-section h1').textContent = 'Kei Sano, MD, PhD.';
+        document.querySelector('.subtitle').textContent = 'Keimy in Japan, Sano Medical AI Lab';
         
         // Update navigation
         const navItems = document.querySelectorAll('.nav-menu a');
-        const englishNavText = ['Research Profile', 'Selected Works', 'Publications', 'Contact'];
+        const englishNavText = ['Profile', 'Selected Works', 'Publications / Awards', 'Contact'];
         navItems.forEach((item, index) => {
             item.textContent = englishNavText[index];
         });
         
         // Update main content
-        document.querySelector('.profile-text h2').textContent = 'Welcome to Kei Sano, MD, PhD (Keimy in Japan)';
+        document.querySelector('.profile-text h2').textContent = 'Welcome to Kei Sano, MD, PhD.';
         document.querySelector('.intro-text').innerHTML = 
             'Physician, Medical AI Researcher, JSPS Postdoctoral Fellow<br>Advancing ophthalmology, retinal imaging analysis, and public health through deep learning and computer vision.';
         
@@ -210,8 +210,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Update other sections
-        document.querySelector('.publications-section h2').textContent = 'Publications & Achievements';
-        document.querySelector('.contact-section h2').textContent = 'Contact & Blog';
+        document.querySelector('.publications-section h2').textContent = 'Publications / Awards';
+        document.querySelector('.contact-section h2').textContent = 'Contact';
         
         // Update language toggle button
         languageToggle.textContent = '日本語 / EN';
