@@ -893,12 +893,13 @@ footer p {
 
 .pub-year {
     font-weight: bold;
-    color: #34495e;
+    color: #2c3e50;
     margin: 1.5em 0 0.5em 0;
-    padding: 0.3em 0.8em;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    border-left: 4px solid #3498db;
-    border-radius: 3px;
+    padding: 0.5em 1em;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
 }
 
 .compact-list {
