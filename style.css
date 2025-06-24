@@ -926,19 +926,11 @@ footer p {
 }
 
 /* Bio Section Slideshow */
-.bio-content {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-}
-
-.bio-text {
-    flex: 2;
-}
-
 .bio-slideshow {
-    flex: 1;
-    min-width: 250px;
+    margin-top: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .slideshow-container {
@@ -967,13 +959,9 @@ footer p {
 
 /* Responsive design for slideshow */
 @media (max-width: 768px) {
-    .bio-content {
-        flex-direction: column;
-    }
-    
     .bio-slideshow {
-        order: -1;
-        margin-bottom: 1rem;
+        max-width: 100%;
+        margin-top: 1.5rem;
     }
     
     .slideshow-container {
