@@ -968,3 +968,78 @@ footer p {
         height: 250px;
     }
 }
+
+/* Contact Form Styles */
+.contact-form {
+    margin-top: 2rem;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-placeholder {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    border: 2px dashed #4caf50;
+}
+
+.form-placeholder p:first-child {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.form-instructions {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.form-instructions h4 {
+    color: #4caf50;
+    margin-bottom: 1rem;
+}
+
+.form-instructions ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.form-instructions li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Google Forms iframe styling */
+.form-container iframe {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for contact form */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .form-container iframe {
+        height: 600px;
+    }
+    
+    .form-instructions {
+        padding: 1rem;
+    }
+}
