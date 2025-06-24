@@ -1043,3 +1043,132 @@ footer p {
         padding: 1rem;
     }
 }
+
+/* Social Media Links Styles */
+.media-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.social-media-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.social-media-section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4em;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-link-item {
+    margin: 0;
+    text-align: center;
+}
+
+.social-link-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link-item a:hover {
+    transform: translateY(-5px);
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.social-icon.linkedin {
+    background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+    color: white;
+}
+
+.social-icon.linkedin:hover {
+    background: linear-gradient(135deg, #005885 0%, #0077b5 100%);
+    box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
+}
+
+.social-icon.github {
+    background: linear-gradient(135deg, #333 0%, #24292e 100%);
+    color: white;
+}
+
+.social-icon.github:hover {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    box-shadow: 0 6px 20px rgba(51, 51, 51, 0.4);
+}
+
+.social-icon.twitter {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.social-icon.twitter:hover {
+    background: linear-gradient(135deg, #000000 0%, #333 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.social-link-item figcaption {
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-link-item a:hover figcaption {
+    color: #4caf50;
+}
+
+/* Responsive design for social media */
+@media (max-width: 768px) {
+    .media-content {
+        gap: 1.5rem;
+    }
+    
+    .social-media-section {
+        padding: 1.5rem;
+    }
+    
+    .social-links {
+        gap: 1.5rem;
+    }
+    
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .social-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
