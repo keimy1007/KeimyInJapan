@@ -238,6 +238,26 @@ document.addEventListener('DOMContentLoaded', function() {
             this.parentNode.insertBefore(placeholder, this);
         });
     }
+
+    // Bio slideshow functionality
+    const slides = document.querySelectorAll('.bio-slideshow .slide');
+    if (slides.length > 0) {
+        let currentSlideIndex = 0;
+        
+        function showNextSlide() {
+            // Remove active class from current slide
+            slides[currentSlideIndex].classList.remove('active');
+            
+            // Move to next slide
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            
+            // Add active class to new slide
+            slides[currentSlideIndex].classList.add('active');
+        }
+        
+        // Start slideshow - change every 5 seconds
+        setInterval(showNextSlide, 5000);
+    }
 });
 
 // Global language toggle function for onclick
