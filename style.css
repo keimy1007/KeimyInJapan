@@ -1137,6 +1137,26 @@ footer p {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+.social-icon.orcid {
+    background: linear-gradient(135deg, #a6ce39 0%, #8bc34a 100%);
+    color: white;
+}
+
+.social-icon.orcid:hover {
+    background: linear-gradient(135deg, #8db82c 0%, #a6ce39 100%);
+    box-shadow: 0 6px 20px rgba(166, 206, 57, 0.4);
+}
+
+.social-icon.scholar {
+    background: linear-gradient(135deg, #4285f4 0%, #1976d2 100%);
+    color: white;
+}
+
+.social-icon.scholar:hover {
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+}
+
 .social-link-item figcaption {
     font-size: 0.9em;
     font-weight: 500;
