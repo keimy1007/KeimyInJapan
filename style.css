@@ -917,12 +917,12 @@ footer p {
 }
 
 .compact-list li strong {
-    color: #3498db;
+    color: #4caf50;
     font-weight: 700;
 }
 
 .compact-list li em {
-    color: #4caf50;
+    color: #3498db;
     font-style: italic;
     font-weight: 600;
 }
