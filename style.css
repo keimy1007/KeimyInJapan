@@ -1130,6 +1130,16 @@ footer p {
     box-shadow: 0 6px 20px rgba(51, 51, 51, 0.4);
 }
 
+.social-icon.note {
+    background: linear-gradient(135deg, #41c9b4 0%, #2cb5a0 100%);
+    color: white;
+}
+
+.social-icon.note:hover {
+    background: linear-gradient(135deg, #2cb5a0 0%, #239b87 100%);
+    box-shadow: 0 6px 20px rgba(65, 201, 180, 0.4);
+}
+
 .social-icon.twitter {
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     color: white;
