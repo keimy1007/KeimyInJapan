@@ -218,25 +218,22 @@ section {
     font-weight: 600;
 }
 
-.info-badge {
+.label-badge {
     background: #4caf50;
     color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
-    margin-bottom: 12px;
-    font-size: 1.1em;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
     display: inline-block;
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
     transition: all 0.3s ease;
 }
 
-.info-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
-}
-
-.info-badge strong {
-    color: white;
+.label-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
 }
 
 /* Research Section */
@@ -911,8 +908,12 @@ footer p {
 
 .pub-year {
     font-weight: bold;
-    color: #4caf50;
+    color: white;
     margin: 1.5em 0 0.5em 0;
+    padding: 0.5em 1em;
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
 }
 
 .compact-list {
