@@ -917,12 +917,14 @@ footer p {
 }
 
 .compact-list li strong {
-    color: #2c3e50;
+    color: #4caf50;
+    font-weight: 700;
 }
 
 .compact-list li em {
-    color: #7f8c8d;
+    color: #e74c3c;
     font-style: italic;
+    font-weight: 600;
 }
 
 /* Bio Section Slideshow */
