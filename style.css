@@ -218,6 +218,27 @@ section {
     font-weight: 600;
 }
 
+.info-badge {
+    background: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+.info-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.info-badge strong {
+    color: white;
+}
+
 /* Research Section */
 .research-section {
     background: rgba(255, 255, 255, 0.8);
