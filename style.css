@@ -334,7 +334,7 @@ section {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
+    width: 100px;
     height: 3px;
     background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
     border-radius: 2px;
@@ -420,7 +420,7 @@ section {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 140px;
     height: 3px;
     background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
     border-radius: 2px;
@@ -559,7 +559,7 @@ section {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 200px;
     height: 3px;
     background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
     border-radius: 2px;
@@ -610,7 +610,7 @@ section {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 160px;
     height: 3px;
     background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
     border-radius: 2px;
