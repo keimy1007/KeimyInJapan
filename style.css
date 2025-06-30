@@ -9,7 +9,7 @@ body {
     font-family: Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.6;
     color: #2c3e50;
-    background: linear-gradient(135deg, #fff4e6 0%, #ffe0b3 100%);
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     min-height: 100vh;
     font-size: 0.9em;
 }
@@ -44,7 +44,7 @@ header {
 .logo-section h1 {
     font-size: 2.2em;
     font-weight: 600;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -83,12 +83,12 @@ header {
     height: 2px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: #ff6b35;
+    color: #1976d2;
     transform: translateY(-2px);
 }
 
@@ -97,7 +97,7 @@ header {
 }
 
 .language-toggle button {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -126,7 +126,7 @@ section {
 /* Hero Section */
 .hero-section {
     padding: 80px 0 100px;
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 140, 66, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(25, 118, 210, 0.1) 0%, rgba(66, 165, 245, 0.1) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -162,7 +162,7 @@ section {
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border-radius: 20px;
     z-index: -1;
     opacity: 0.3;
@@ -214,12 +214,12 @@ section {
 }
 
 .contact-info strong {
-    color: #ff6b35;
+    color: #1976d2;
     font-weight: 600;
 }
 
 .label-badge {
-    background: #ff6b35;
+    background: #1976d2;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -227,13 +227,13 @@ section {
     font-weight: bold;
     display: inline-block;
     margin-right: 12px;
-    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
     transition: all 0.3s ease;
 }
 
 .label-badge:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.4);
 }
 
 /* Research Section */
@@ -260,7 +260,7 @@ section {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border-radius: 2px;
 }
 
@@ -290,7 +290,7 @@ section {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
 }
 
 .research-item:hover {
@@ -336,7 +336,7 @@ section {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border-radius: 2px;
 }
 
@@ -381,7 +381,7 @@ section {
 }
 
 .timeline-item .year {
-    color: #ff6b35;
+    color: #1976d2;
     font-weight: bold;
     font-size: 1em;
     flex-shrink: 0;
@@ -422,7 +422,7 @@ section {
     transform: translateX(-50%);
     width: 140px;
     height: 3px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border-radius: 2px;
 }
 
@@ -491,7 +491,7 @@ section {
 }
 
 .tech-tag {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     color: white;
     padding: 6px 15px;
     border-radius: 20px;
@@ -509,7 +509,7 @@ section {
 
 .work-link {
     background: rgba(102, 126, 234, 0.1);
-    color: #ff6b35;
+    color: #1976d2;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 25px;
@@ -519,7 +519,7 @@ section {
 }
 
 .work-link:hover {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
@@ -561,7 +561,7 @@ section {
     transform: translateX(-50%);
     width: 200px;
     height: 3px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border-radius: 2px;
 }
 
@@ -612,7 +612,7 @@ section {
     transform: translateX(-50%);
     width: 160px;
     height: 3px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border-radius: 2px;
 }
 
@@ -629,7 +629,7 @@ section {
 }
 
 .media-link {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -638,17 +638,17 @@ section {
     padding: 12px 30px;
     border-radius: 25px;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
 }
 
 .media-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    box-shadow: 0 8px 25px rgba(25, 118, 210, 0.4);
 }
 
 /* Contact Section */
 .contact-section {
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 140, 66, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(25, 118, 210, 0.1) 0%, rgba(66, 165, 245, 0.1) 100%);
     padding: 80px 0;
 }
 
@@ -669,7 +669,7 @@ section {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     border-radius: 2px;
 }
 
@@ -692,7 +692,7 @@ section {
 }
 
 .contact-details strong {
-    color: #ff6b35;
+    color: #1976d2;
     font-weight: 600;
 }
 
@@ -713,7 +713,7 @@ footer::before {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #ff8c42, transparent);
+    background: linear-gradient(90deg, transparent, #42a5f5, transparent);
 }
 
 footer p {
@@ -911,9 +911,9 @@ footer p {
     color: white;
     margin: 1.5em 0 0.5em 0;
     padding: 0.5em 1em;
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
 }
 
 .compact-list {
@@ -1006,7 +1006,7 @@ footer p {
     padding: 2rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 10px;
-    border: 2px dashed #ff6b35;
+    border: 2px dashed #1976d2;
 }
 
 .form-placeholder p:first-child {
@@ -1016,7 +1016,7 @@ footer p {
 }
 
 .form-instructions {
-    background: rgba(255, 107, 53, 0.1);
+    background: rgba(25, 118, 210, 0.1);
     padding: 1.5rem;
     border-radius: 8px;
     margin-top: 1.5rem;
@@ -1024,7 +1024,7 @@ footer p {
 }
 
 .form-instructions h4 {
-    color: #ff6b35;
+    color: #1976d2;
     margin-bottom: 1rem;
 }
 
@@ -1203,7 +1203,7 @@ footer p {
 }
 
 .social-link-item a:hover figcaption {
-    color: #ff6b35;
+    color: #1976d2;
 }
 
 /* Responsive design for social media */
