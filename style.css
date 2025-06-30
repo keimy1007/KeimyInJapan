@@ -363,12 +363,9 @@ section {
 }
 
 .timeline-item .year {
-    background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9em;
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 1em;
     flex-shrink: 0;
 }
 
@@ -893,12 +890,8 @@ footer p {
 
 .pub-year {
     font-weight: bold;
-    color: white;
+    color: #4caf50;
     margin: 1.5em 0 0.5em 0;
-    padding: 0.5em 1em;
-    background: linear-gradient(135deg, #4caf50, #81c784);
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
 }
 
 .compact-list {
