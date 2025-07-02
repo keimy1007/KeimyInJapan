@@ -1,0 +1,16 @@
+title: Kei Sano, MD, PhD.
+description: 佐野圭のメディカルAIラボ - 眼科・医療AI・コンピュータビジョン・量子計算の研究者
+author: Kei Sano
+url: https://keimyinjapan.github.io/KeimyInJapan
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+lang: ja
+
+seo:
+  type: Person
+  name: Kei Sano
+  links:
+    - https://keimyinjapan.github.io/KeimyInJapan
